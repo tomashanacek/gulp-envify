@@ -13,9 +13,13 @@ npm install --save-dev gulp-envify
 ```javascript
 var envify = require('gulp-envify');
 
+var environment = {
+  NODE_ENV: 'production'
+};
+
 gulp.task('compress', function() {
   return gulp.src('lib/*.js')
-    .pipe(envify([environment]))
+    .pipe(envify(environment))
     .pipe(gulp.dest('dist'));
 });
 ```
